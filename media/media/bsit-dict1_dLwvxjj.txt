@@ -1,0 +1,143 @@
+Dictionaries:
+-------------
+{"name":"python"}
+
+{"rollno":101}
+
+--->represent with curley braces
+--->seperate with colon(:)
+--->leftside of colon--->keys
+--->rightside of colon--->values.
+--->combination of key and value is nothing but pair.
+
+
+rules and regulations
+----------------------
+-->1)duplicate keys are not allowed but values can be duplicate.
+-->2)hetrogenous objects are allowed for both key and values
+-->3)insertion order is not preserved
+--->4)dictionaries are mutuable.
+--->5)indexing and slicing are not applicable.
+
+
+eg:
+---
+#empty dictionaries
+d={}
+print("first one:",d)---->{}
+
+#2nd way empty dictionary
+d1=dict()
+print("2nd one:",d1)--->{}
+
+#dictionaries with values
+
+d2={"name":"python","rollno":100}
+print(d2)---->{"name":"python","rollno":100}
+
+
+eg2:
+----
+#how to create dictionary?
+d={}
+d[100]="hello"
+d[101]="python"
+d[102]="java"
+print(d)
+d["name"]="bsit"
+print(d)
+
+
+#or
+
+d1={100:"hello",101:"python",102:"java","name":"bsit"}
+
+
+how to access data from dictionary:
+-----------------------------------
+eg1:
+---
+d={100:"python",101:"java",102:"c"}
+print(d[100])-->python
+print(d[101])-->java
+print(d[102])-->c
+print(d[103])--->key error:103
+
+
+
+how to update dictionaries:
+---------------------------
+eg1:
+----
+d={100:"python",101:"java",102:"c"}
+
+d[100]="c++"
+print(d)--->{100: 'c++', 101: 'java', 102: 'c'}
+d[101]="database"
+print(d)--->{100: 'c++', 101: 'database', 102: 'c'}
+
+how to delete elements from dictionary
+---------------------------------------
+eg1:
+----
+del():
+------
+d={100:"python",101:"java",102:"c"}
+print(d)
+del d[100]
+print(d)
+del d[102]
+print(d)
+
+eg2:
+----
+clear()
+-------
+d={100:"python",101:"java",102:"c"}
+print(d)
+d.clear()
+print(d)-->{}
+
+eg3:
+----
+del:
+----
+
+d={100:"python",101:"java",102:"c"}
+print(d)
+del d
+print(d)-->NameError: name 'd' is not defined
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+eg3:
+---
+#add the elements to dictionary
+
+d={100:"python",101:"java"}
+
+d[102]="c"
+d[103]="database"
+print(d)
+d['rollno']=21
+d['marks']=85
+print(d)
+
+
+
+
+
+
+

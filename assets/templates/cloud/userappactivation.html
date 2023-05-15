@@ -1,0 +1,35 @@
+{% extends 'cloudbase.html' %}
+
+{% block contents %}
+<div>
+
+        <center><table border="2px">
+                                            <tr style="color: darkblue">
+                                                <th>S.No</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>App Name</th>
+                                                <th>Access Key</th>
+                                                <th>Secret Key</th>
+                                                <th>Generate</th>
+
+                                            </tr>
+                                            {% for i in objects %}
+                                            <tr style="color: WHITE">
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{i.name}}</td>
+                                                <td>{{i.email}}</td>
+                                                <td>{{i.appname}}</td>
+                                                <td>{{i.accesskey}}</td>
+                                                <td>{{i.secretkey}}</td>
+
+                                                {% if i.secretkey == 'waiting' %}
+                                                <td><a class="btn-link" href="{% url 'clouduserappactivations' i.appname %}" style="color:BLUE">Activate App</a></td>
+                                                {% else %}
+                                                <td style="color:YELLOW"> Key Generated</td>
+                                                {% endif %}
+                                            </tr>
+                                            {% endfor %}
+                                        </table></center>
+</div>
+    {% endblock %}

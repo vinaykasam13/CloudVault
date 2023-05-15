@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<div>
+
+        <center><p></p><form action="{% url 'storeregistration'%}" method="POST">
+						{% csrf_token %}
+						<div class="row form-group">
+							<div class="col-md-6">
+								<label for="fname">User Name</label>
+								<input type="text" name="name" id="fname" class="form-control" required="True" placeholder="Your Name">
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label for="email">Email</label>
+								<input type="email" name="email" id="email" class="form-control" required="True"  placeholder="Your email address">
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label for="subject">Enter Password </label>
+								<input type="password" name="password" id="subject" class="form-control" required="True"  placeholder="Enter Password here">
+							</div>
+						</div>
+						<div class="row form-group">
+							<div class="col-md-12">
+								<label for="subject">Enter Mobile number </label>
+								<input type="text" name="mobile" id="subject" patern="[6789][0-9]{9}" required="True"  class="form-control" placeholder="Enter Mobile Number here">
+							</div>
+						</div>
+
+
+
+						<div class="row form-group">
+                            <input type="hidden" value="waiting" name="status">
+						</div>
+						<div class="form-group text-center">
+							<input type="submit" value="Register" class="btn btn-primary">
+						</div>
+ <center>
+                        {% if messages %}
+                               {% for message in messages %}
+                                  <font color='RED'> {{ message }}</font>
+                               {% endfor %}
+                           {% endif %}
+                           </center>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div></center>
+</div>
+    {% endblock %}

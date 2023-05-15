@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<center>
+    <p>
+         <h2>Admin Login here</h2>
+                        <form class="contact-form" action="{%url 'adminlogincheck'%}" method="POST">
+							{% csrf_token %}
+						<div class="form-group">
+							<label for="name" class="sr-only">Name</label>
+							<input type="text" name="name" style="background-color : #d1d1d1;" class="form-control" id="name" required placeholder="Enter Login Name">
+						</div>
+						<div class="form-group">
+							<label for="email" class="sr-only">Email</label>
+							<input type="password" name="password" style="background-color : #d1d1d1;" class="form-control" id="email" required placeholder="Enter Your Password">
+						</div>
+
+						<div class="form-group">
+							<input type="submit" id="btn-submit" class="btn btn-primary btn-send-message btn-md" value="Login">
+						</div>
+					</form>
+								<center>
+                        {% if messages %}
+                               {% for message in messages %}
+                                  <font color='RED'> {{ message }}</font>
+                               {% endfor %}
+                           {% endif %}
+</center>
+
+    {% endblock %}

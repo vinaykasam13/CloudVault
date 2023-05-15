@@ -1,0 +1,156 @@
+lambda functions:
+------------------
+--->sometimes we can declare a function without any name
+such type of nameless functions are called as anonymous functions or lambda functions.
+
+
+syn:
+----
+lambda n:n*n
+
+purpose:
+--------
+-->by using lambda functions we can write very concise code  so that
+readability of the program will be improved.
+
+eg1:
+----
+s=lambda n:n*n
+print("square of 4 is:",s(4))
+
+op:
+---
+square  of 4 is 16
+
+eg2:
+----
+s1=lambda m,n:m+n
+print("addition of m,n:",s1(6,5))
+
+op:
+---
+addition of m,n :11
+
+filter ():
+----------
+we can use filter() function to filter values from the given sequence based on
+some condition.
+
+
+syn:
+----
+filter(function,sequence)
+
+eg:
+---
+#only even numbers from the list by using filter function
+
+
+
+
+l=[0,5,10,15,20,25,30,41,47,52,54]
+
+l1=list(filter(lambda x:x%2==0,l))
+
+print("even numbers:",l1)
+
+op:
+---
+even numbers: [0, 10, 20, 30, 52, 54]
+
+
+
+
+
+
+
+1)filter
+2)map
+3)reduce
+
+
+
+
+
+map function():
+---------------
+-->for every element present in the given sequence,apply some functionality
+and generate new element with the required modification.
+
+-->for this requirement we should go for map() function.
+
+syn:
+----
+map(function,sequence)
+
+eg:
+---
+l=[1,2,3,4,5]
+l1=list(map(lambda x:x*2,l))
+print(l1)
+
+op:
+---
+[2, 4, 6, 8, 10]
+
+
+#adding two list of elements
+l=[1,2,3,4,5]
+l1=[6,7,8,9,10]
+
+l2=list(map(lambda x,y:x+y,l,l1))
+print(l2)
+
+op:
+---
+[7, 9, 11, 13, 15]
+
+
+
+#multiplying two list of elements
+
+t=[1,2,3,4,5]
+t1=[6,7,8,9,10]
+
+l3=list(map(lambda x,y:x*y,t,t1))
+print(l3)
+
+op:
+---
+[6, 14, 24, 36, 50]
+
+
+reduce():
+---------
+-->reduce()function reduces sequence of elements into a single element
+by applying the specified function.
+
+syn:
+----
+reduce(function,sequence)
+
+-->reduce() function present in functools module and hence we should write
+import statment.
+
+
+
+eg1:
+----
+
+l=[10,20,30,40,50]
+res=reduce(lambda x,y:x+y,l)#--->
+print("total value:",res)
+
+op:
+----
+total value:150
+
+eg2:
+----
+l1=[1,5,4]
+res=reduce(lambda x,y:x-y,l1)#x-->1->y->5->x->-4-->y->4
+print("total value:",res)
+
+op:
+---
+total value:-8
